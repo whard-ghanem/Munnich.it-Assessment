@@ -305,6 +305,9 @@ body.cart-visible .cart{
 
 /* FOR TABLET SCREENS */
 @media screen and (max-width: 992px) {
+    .container{
+        width:100vw;}
+    
     .products {
         grid-template-columns: repeat(3, 1fr);}
 
@@ -312,6 +315,9 @@ body.cart-visible .cart{
 
 /* FOR MOBLIE PHONE SCREENS */
 @media screen and (max-width: 768px) {
+
+    .container{
+        width:100vw;}
     .products {
         grid-template-columns: repeat(2, 1fr);}
 
