@@ -1,0 +1,316 @@
+/* Font import from google fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* CSS reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+
+/* Setting variables */
+
+:root{
+
+    /* font */
+    --font-family:'Poppins', sans-serif;
+
+    /* colors */
+    --primary-color:rgb(0,0,0);
+    --primary-color-light:rgba(0, 0, 0, 0.9);
+    --secondary-color:white;
+    --accent-color:rgb(125,125,125);
+    --accent-color-dark:rgb(13, 13, 13);
+    --red-color:rgb(140, 0, 0);
+    --red-color-light:rgb(160, 0, 0);
+    --red-color-lighter:rgb(233, 0, 0);
+
+    /* shadows and borders */
+    --card-shadow:0px 7px 7px rgba(0, 0, 0, 0.3);
+    --card-border:1px solid rgba(0, 0, 0, 0.2);
+    --side-bar-shadow:0px -7px 7px black;
+
+}
+
+
+/* Setting the font family for the entire body */
+
+body {
+    font-family: var(--font-family);
+}
+
+
+/* Container styles */
+
+.container {
+    width: 90vw;
+    margin: auto;
+    padding-top: 10px;
+    text-align: center;
+}
+
+
+
+
+/* Header styles */
+
+header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+}
+
+header .title {
+    font-size: xx-large;
+}
+
+header .cart-button {
+    position: relative;
+    width: 40px;
+    cursor: pointer;
+}
+
+header .cart-button .cart-icon {
+    width: 100%;
+    cursor: pointer;
+}
+
+header .cart-button .count {
+    display: none;
+    width: 20px;
+    height: 20px;
+    background-color: var(--red-color-lighter);
+    font-size: small;
+    color: var(--secondary-color);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    cursor: pointer;
+}
+
+
+
+
+/* Main content (product cards) styles */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.products .product-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: var(--card-border);
+    border-radius: 13px;
+    box-shadow: var(--card-shadow);
+    cursor: default;
+    transition: ease-in-out 0.15s;
+}
+
+.products .product-card img {
+    width: 100%;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.products .product-card h2 {
+    font-weight: 500;
+    font-size: larger;
+}
+
+.products .product-card .price {
+    font-size: medium;
+    color: var(--accent-color);
+    letter-spacing: 3px;
+}
+
+.products .product-card .add-item {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: small;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-family: var(--font-family);
+}
+
+.products .product-card .add-item:hover {
+    background-color: var(--primary-color-light);
+}
+
+.products .product-card .add-item:active {
+    background-color: var(--primary-color);
+}
+
+
+
+/* Side bar (shopping cart) styles */
+
+.cart {
+    width: 400px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -400px;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;  
+    box-shadow: var(--side-bar-shadow);
+    transition: ease-in-out 0.5s;
+}
+
+body.cart-visible .cart{
+    right: 0px;
+}
+
+.cart .cart-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart .cart-header h1{
+    padding: 10px;
+    font-size: x-large;
+    font-weight: 300;
+}
+
+.cart button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.cart .cart-header .close{
+    background-color: transparent;
+    padding: 11px;
+    margin-right: 13px;
+    background-image: url('images/close.png');
+    background-size: cover;
+    filter: invert(100%);
+}
+
+.cart .added-items .item{
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 60px 140px 70px 60px 30px;
+    gap:5px;
+    text-align: center;
+    align-items: center;
+    font-size: small;
+}
+
+.cart .added-items .item img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.cart .added-items .item .quantity{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cart .added-items .item .quantity .increase,.decrease{
+    background-color: var(--secondary-color);
+    display: flex;
+    color: var(--primary-color);
+    width: 18px;
+    height: 18px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cart .added-items .item:nth-child(even){
+    background-color: var(--accent-color-dark);
+}
+
+.cart .added-items{
+    overflow: auto;
+}
+
+.cart .added-items::-webkit-scrollbar{
+    width: 0;
+}
+
+.cart .added-items .item .remove-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.cart .added-items .item .remove-item img{
+    filter: invert(100%);
+    cursor: pointer;
+}
+
+.cart .added-items .item .remove-item:hover{
+    background-color: var(--red-color-light);
+}
+
+.cart .added-items .item .remove-item:active{
+    background-color: var(--red-color);
+}
+
+.cart .clear{
+    background-color: var(--red-color);
+    color: var(--secondary-color);
+    margin: 10px;
+    border-radius: 5px;
+    font-size: large;
+    font-family: var(--font-family);
+    font-weight: 300;
+}
+
+.cart .clear:hover{
+    background-color: var(--red-color-light);
+}
+
+.cart .clear:active{
+    background-color: var(--red-color);
+}
+
+
+
+
+/* Media queries for responsivness on different screen sizes */
+
+/* FOR TABLET SCREENS */
+@media screen and (max-width: 992px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr);}
+}
+
+/* FOR MOBLIE PHONE SCREENS */
+@media screen and (max-width: 768px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);}
+}

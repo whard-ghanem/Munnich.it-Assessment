@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "name":"MONT BLANC EXPLORER EDP 100ML",
+        "price":350,
+        "image":"images/explorer.webp" 
+    },
+    {
+        "id":2,
+        "name":"PACO RABBANE INVICTUS EDT 100ML",
+        "price":400,
+        "image":"images/invictus.jpg" 
+    },
+    {
+        "id":3,
+        "name":"ARMANI STRONGER WITH YOU EDT 100ML",
+        "price":300,
+        "image":"images/stronger-with-you.jpg" 
+    },
+    {
+        "id":4,
+        "name":"YVES SAINT LAURENT Y EDP 100ML",
+        "price":450,
+        "image":"images/YSL.webp"
+    },
+    {
+        "id":5,
+        "name":"DOLCE & GABBANA THE ONE EDT 150ML",
+        "price":600,
+        "image":"images/the-one.webp" 
+    },
+    {
+        "id":6,
+        "name":"DIOR SAUVAGE EDP 100ML",
+        "price":500,
+        "image":"images/sauvage.webp" 
+    }
+]
