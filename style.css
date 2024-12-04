@@ -308,17 +308,17 @@ body.cart-visible .cart{
     .products {
         grid-template-columns: repeat(3, 1fr);}
 
-    .cart {
-        width: 100vw;
-        right:-100vw;}
-
-    .body.cart-visible .cart{
-        right: 0px;}
-
 }
 
 /* FOR MOBLIE PHONE SCREENS */
 @media screen and (max-width: 768px) {
     .products {
         grid-template-columns: repeat(2, 1fr);}
+
+     .cart {
+        width: 100vw;
+        right:-100vw;}
+
+    .body.cart-visible .cart{
+        right: 0px;}
 }
