@@ -309,7 +309,12 @@ body.cart-visible .cart{
         grid-template-columns: repeat(3, 1fr);}
 
     .cart {
-        width: 100vw;}
+        width: 100vw;
+        right:-100vw;}
+
+    .body.cart-visible .cart{
+        right: 0px;}
+
 }
 
 /* FOR MOBLIE PHONE SCREENS */
