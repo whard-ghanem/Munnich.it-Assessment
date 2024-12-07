@@ -318,6 +318,6 @@ body.cart-visible .cart{
         grid-template-columns: repeat(2, 1fr);}
 
      .cart {
-        width: 50vw;
-        right:-50vw}
+        width: 100vw;
+        right:-100vw}
 }
